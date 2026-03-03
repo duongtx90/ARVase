@@ -10,7 +10,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <style>
       body {
-        margin: 0;
+        margin: 0 !important;
         overflow: hidden;
         background-color: transparent;
       }
@@ -22,6 +22,31 @@
       /* Hide the default AR.js debug UI */
       .a-enter-vr {
         display: none !important;
+      }
+      /* AR.js camera feed video: fill the viewport with cover crop */
+      video {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        z-index: -2 !important;  /* behind the WebGL canvas */
+      }
+      /* A-Frame WebGL canvas: only fix position — do NOT override width/height.
+         Changing CSS size without updating gl.viewport squishes the 3D rendering. */
+      canvas {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 1 !important;   /* above video, renders the 3D scene */
+      }
+      a-scene {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
       }
     </style>
   </head>
