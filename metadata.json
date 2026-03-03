@@ -1,0 +1,5 @@
+{
+  "name": "AR Ceramic Vase",
+  "description": "An AR web app that shows a 3D ceramic vase above a marker.",
+  "requestFramePermissions": ["camera"]
+}

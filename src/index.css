@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
